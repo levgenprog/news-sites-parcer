@@ -14,7 +14,9 @@ def begin() -> str:
 
 def main():
     res_name = begin()
-    print(handlers.get_one_res(res_name))
+    params = handlers.get_one_res(res_name)
+    # print(params)
+    handlers.parce_resource(params)
 
 
 

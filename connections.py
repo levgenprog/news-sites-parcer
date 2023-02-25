@@ -38,9 +38,9 @@ class Connect:
         )
         desc = self.cur.description
         cols = [col[0] for col in desc]
-        data = [dict(zip(cols, raw)) for raw in self.cur.fetchall()]
+        data = (dict(zip(cols, raw)) for raw in self.cur.fetchall()) 
         self.closeConnection()
-        return data
+        return list(data)[0]
         
 
     def initial(self):
